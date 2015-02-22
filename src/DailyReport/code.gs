@@ -30,13 +30,13 @@ function onOpen() {
   //var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   //var entries = [{
   //  name : "Send Report",
-  //  functionName : "createAndSendDocument"
+  //  functionName : "createAndSendReport"
   //}];
   //spreadsheet.addMenu("Nvent Menu", entries);
   
     SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
       .createMenu('Nvent Menu')
-      .addItem('Send Report', 'createAndSendDocument')
+      .addItem('Send Report', 'createAndSendReport')
       .addItem('Test Report', 'testReportAndAlert')
       .addToUi();
 };
@@ -462,7 +462,7 @@ function getSortedAndFilteredData(settings) {
 //		steve.morin@gmail.com	Status	Status		
 //			Due Date	Due Date		
 //			Task			
-function createAndSendDocument() {
+function createAndSendReport() {
   
   // Get a list of emails to send to
   var settings = getControlSettings();
