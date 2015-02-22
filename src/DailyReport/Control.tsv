@@ -1,0 +1,5 @@
+SUBJECT	SENDEMAIL	EMAILS2SEND	COLUMNS2WRITE	COLUMNS2SORT	DATASHEET	FILTER
+Daily Partner Task List Report	Yes	steve@nvent.solutions	Owner	Owner	Task list	{"column":"Status","type":"exclude","values":["Done"]}
+		steve.morin@gmail.com	Status	Status		
+			Due Date	Due Date		
+			Task			
