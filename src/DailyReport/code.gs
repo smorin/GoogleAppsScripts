@@ -499,6 +499,10 @@ function createAndSendReport() {
     }
   }
   
+  for(var i = 0; i < settings.columns2print.length; i++) {
+    body = body + '\t' + settings.columns2print[i];
+  }
+  body = body +'\n';
   for(var rowIndex = 0; rowIndex < data.length; rowIndex++) {
     var row = '';
     for(var columnIndex = 0; columnIndex < data[rowIndex].length; columnIndex++) {
@@ -518,6 +522,11 @@ function createAndSendReport() {
   }
   
   bodyHtml = '<table>';
+  bodyHtml = bodyHtml +'<tr>';
+  for(var i = 0; i < settings.columns2print.length; i++) {
+    bodyHtml = bodyHtml + '<td><b>' + settings.columns2print[i] + '</b></td>';
+  }
+  bodyHtml = bodyHtml +'<tr>';
   for(var rowIndex = 0; rowIndex < data.length; rowIndex++) {
     var row = '';
     bodyHtml = bodyHtml +'<tr>';
