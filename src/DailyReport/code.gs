@@ -498,6 +498,11 @@ function createAndSendReport() {
       }
     }
   }
+
+  var currentDocUrl = SpreadsheetApp.getActiveSpreadsheet().getUrl();
+  var currentDocName = SpreadsheetApp.getActiveSpreadsheet().getName();
+  
+  body = body + "Url to Referenced SpreadSheet ("+currentDocName+") Url: " + currentDocUrl + "\n";
   
   for(var i = 0; i < settings.columns2print.length; i++) {
     body = body + '\t' + settings.columns2print[i];
@@ -521,7 +526,9 @@ function createAndSendReport() {
     body = body + row + '\n';
   }
   
-  bodyHtml = '<table>';
+  bodyHtml = bodyHtml + "Url to Referenced SpreadSheet ("+currentDocName+") Url: <a href='" + currentDocUrl + "'>" + encodeURI(currentDocUrl) + "</a><br><br>";
+  
+  bodyHtml = bodyHtml + '<table>';
   bodyHtml = bodyHtml +'<tr>';
   for(var i = 0; i < settings.columns2print.length; i++) {
     bodyHtml = bodyHtml + '<td><b>' + settings.columns2print[i] + '</b></td>';
